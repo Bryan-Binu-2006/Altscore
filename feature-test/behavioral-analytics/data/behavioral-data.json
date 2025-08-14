@@ -1,0 +1,157 @@
+[
+  {
+    "userId": "user-123",
+    "eventType": "page-load",
+    "path": "/",
+    "timestamp": "2025-08-13T16:51:27.307Z",
+    "id": "event-1755103887307-407"
+  },
+  {
+    "userId": "user-123",
+    "eventType": "form-field-focus",
+    "elementId": "user-id",
+    "formId": null,
+    "path": "/",
+    "timestamp": "2025-08-13T16:51:35.417Z",
+    "id": "event-1755103895417-583"
+  },
+  {
+    "userId": "user-123",
+    "eventType": "form-field-blur",
+    "elementId": "user-id",
+    "formId": null,
+    "value": "has-value",
+    "durationMs": 1604,
+    "path": "/",
+    "timestamp": "2025-08-13T16:51:37.019Z",
+    "id": "event-1755103897019-217"
+  },
+  {
+    "userId": "user-123",
+    "eventType": "form-field-focus",
+    "elementId": "full-name",
+    "formId": "credit-form",
+    "path": "/",
+    "timestamp": "2025-08-13T16:51:37.032Z",
+    "id": "event-1755103897032-568"
+  },
+  {
+    "userId": "user-123",
+    "eventType": "form-field-blur",
+    "elementId": "full-name",
+    "formId": "credit-form",
+    "value": "has-value",
+    "durationMs": 1937,
+    "path": "/",
+    "timestamp": "2025-08-13T16:51:38.963Z",
+    "id": "event-1755103898963-587"
+  },
+  {
+    "userId": "user-123",
+    "eventType": "form-field-focus",
+    "elementId": "age",
+    "formId": "credit-form",
+    "path": "/",
+    "timestamp": "2025-08-13T16:51:38.975Z",
+    "id": "event-1755103898975-872"
+  },
+  {
+    "userId": "user-123",
+    "eventType": "form-field-blur",
+    "elementId": "age",
+    "formId": "credit-form",
+    "value": "has-value",
+    "durationMs": 4695,
+    "path": "/",
+    "timestamp": "2025-08-13T16:51:43.663Z",
+    "id": "event-1755103903663-126"
+  },
+  {
+    "userId": "user-123",
+    "eventType": "form-field-focus",
+    "elementId": "income",
+    "formId": "credit-form",
+    "path": "/",
+    "timestamp": "2025-08-13T16:51:43.675Z",
+    "id": "event-1755103903675-700"
+  },
+  {
+    "userId": "user-123",
+    "eventType": "form-field-blur",
+    "elementId": "income",
+    "formId": "credit-form",
+    "value": "has-value",
+    "durationMs": 4539,
+    "path": "/",
+    "timestamp": "2025-08-13T16:51:48.203Z",
+    "id": "event-1755103908203-452"
+  },
+  {
+    "userId": "user-123",
+    "eventType": "form-field-focus",
+    "elementId": "payment-history",
+    "formId": "credit-form",
+    "path": "/",
+    "timestamp": "2025-08-13T16:51:49.394Z",
+    "id": "event-1755103909394-720"
+  },
+  {
+    "userId": "user-123",
+    "eventType": "form-field-blur",
+    "elementId": "payment-history",
+    "formId": "credit-form",
+    "value": "has-value",
+    "durationMs": 3212,
+    "path": "/",
+    "timestamp": "2025-08-13T16:51:52.604Z",
+    "id": "event-1755103912604-730"
+  },
+  {
+    "userId": "user-123",
+    "eventType": "form-field-focus",
+    "elementId": "savings-behavior",
+    "formId": "credit-form",
+    "path": "/",
+    "timestamp": "2025-08-13T16:51:52.611Z",
+    "id": "event-1755103912611-732"
+  },
+  {
+    "userId": "user-123",
+    "eventType": "form-field-blur",
+    "elementId": "savings-behavior",
+    "formId": "credit-form",
+    "value": "has-value",
+    "durationMs": 1987,
+    "path": "/",
+    "timestamp": "2025-08-13T16:51:54.594Z",
+    "id": "event-1755103914594-509"
+  },
+  {
+    "userId": "user-123",
+    "eventType": "form-field-focus",
+    "elementId": "shopping-preference",
+    "formId": "credit-form",
+    "path": "/",
+    "timestamp": "2025-08-13T16:51:54.600Z",
+    "id": "event-1755103914600-464"
+  },
+  {
+    "userId": "user-123",
+    "eventType": "form-field-blur",
+    "elementId": "shopping-preference",
+    "formId": "credit-form",
+    "value": "long-text",
+    "durationMs": 5682,
+    "path": "/",
+    "timestamp": "2025-08-13T16:52:00.280Z",
+    "id": "event-1755103920280-405"
+  },
+  {
+    "userId": "user-123",
+    "eventType": "form-submit",
+    "formId": "credit-form",
+    "path": "/",
+    "timestamp": "2025-08-13T16:52:00.359Z",
+    "id": "event-1755103920359-479"
+  }
+]

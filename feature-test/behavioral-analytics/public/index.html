@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Behavioral Analytics Test</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1 {
+            color: #2563eb;
+        }
+        .card {
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        input, select, textarea, button {
+            padding: 8px 12px;
+            border-radius: 4px;
+            border: 1px solid #d1d5db;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        button {
+            background-color: #2563eb;
+            color: white;
+            border: none;
+            cursor: pointer;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+        button:hover {
+            background-color: #1d4ed8;
+        }
+        .tabs {
+            display: flex;
+            margin-bottom: 20px;
+        }
+        .tab {
+            padding: 10px 20px;
+            cursor: pointer;
+            border: 1px solid #d1d5db;
+            border-bottom: none;
+            border-radius: 8px 8px 0 0;
+            margin-right: 5px;
+        }
+        .tab.active {
+            background-color: #2563eb;
+            color: white;
+        }
+        .tab-content {
+            display: none;
+        }
+        .tab-content.active {
+            display: block;
+        }
+        #events-log {
+            white-space: pre-wrap;
+            background-color: #f3f4f6;
+            padding: 15px;
+            border-radius: 4px;
+            font-family: monospace;
+            height: 200px;
+            overflow-y: auto;
+            margin-top: 20px;
+        }
+        #insights-data {
+            white-space: pre-wrap;
+            background-color: #f3f4f6;
+            padding: 15px;
+            border-radius: 4px;
+            font-family: monospace;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>AltScore Behavioral Analytics Test</h1>
+    
+    <div class="tabs">
+        <div class="tab active" data-tab="demo-form">Demo Form</div>
+        <div class="tab" data-tab="analytics">Analytics</div>
+    </div>
+    
+    <div id="demo-form" class="tab-content active">
+        <div class="card">
+            <h2>Credit Application Demo</h2>
+            <p>Fill out this form to simulate user behavior for analytics tracking.</p>
+            
+            <div class="form-group">
+                <label for="user-id">User ID:</label>
+                <input type="text" id="user-id" placeholder="Enter a unique user ID" value="user-123">
+            </div>
+            
+            <form id="credit-form">
+                <h3>Personal Information</h3>
+                
+                <div class="form-group">
+                    <label for="full-name">Full Name:</label>
+                    <input type="text" id="full-name" placeholder="Enter your full name">
+                </div>
+                
+                <div class="form-group">
+                    <label for="age">Age:</label>
+                    <input type="number" id="age" placeholder="Enter your age">
+                </div>
+                
+                <div class="form-group">
+                    <label for="income">Monthly Income (₹):</label>
+                    <input type="number" id="income" placeholder="Enter your monthly income">
+                </div>
+                
+                <h3>Financial Information</h3>
+                
+                <div class="form-group">
+                    <label for="payment-history">Payment History:</label>
+                    <select id="payment-history">
+                        <option value="">-- Select --</option>
+                        <option value="always-on-time">Always on time</option>
+                        <option value="usually-on-time">Usually on time</option>
+                        <option value="sometimes-late">Sometimes late</option>
+                        <option value="often-late">Often late</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="savings-behavior">Savings Behavior:</label>
+                    <select id="savings-behavior">
+                        <option value="">-- Select --</option>
+                        <option value="regular-saver">Regular saver</option>
+                        <option value="occasional-saver">Occasional saver</option>
+                        <option value="spend-everything">Spend everything</option>
+                        <option value="no-savings">No savings</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="shopping-preference">Shopping Preference:</label>
+                    <select id="shopping-preference">
+                        <option value="">-- Select --</option>
+                        <option value="research-before-buying">Research before buying</option>
+                        <option value="impulse-buyer">Impulse buyer</option>
+                        <option value="budget-conscious">Budget conscious</option>
+                        <option value="luxury-focused">Luxury focused</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="additional-notes">Additional Notes:</label>
+                    <textarea id="additional-notes" rows="4" placeholder="Any additional information..."></textarea>
+                </div>
+                
+                <button type="submit">Submit Application</button>
+            </form>
+        </div>
+        
+        <div class="card">
+            <h2>Events Log</h2>
+            <p>This section displays the behavioral events captured during your session.</p>
+            <div id="events-log"></div>
+            <button id="clear-events">Clear Events</button>
+        </div>
+    </div>
+    
+    <div id="analytics" class="tab-content">
+        <div class="card">
+            <h2>User Behavior Analysis</h2>
+            <p>View insights generated from collected behavioral data.</p>
+            
+            <div class="form-group">
+                <label for="analytics-user-id">User ID:</label>
+                <input type="text" id="analytics-user-id" placeholder="Enter user ID to analyze">
+            </div>
+            
+            <button id="get-insights">Generate Insights</button>
+            
+            <pre id="insights-data"></pre>
+        </div>
+        
+        <div class="card">
+            <h2>Risk Assessment</h2>
+            <p>Based on behavioral patterns, the system evaluates risk factors.</p>
+            
+            <div id="risk-assessment">
+                <p>Generate insights to view risk assessment</p>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const API_URL = 'http://localhost:3200/api/behavior';
+            const userId = document.getElementById('user-id').value;
+            const eventsLog = document.getElementById('events-log');
+            const form = document.getElementById('credit-form');
+            const tabs = document.querySelectorAll('.tab');
+            const tabContents = document.querySelectorAll('.tab-content');
+            
+            let capturedEvents = [];
+            
+            // Tab switching
+            tabs.forEach(tab => {
+                tab.addEventListener('click', function() {
+                    const tabId = this.getAttribute('data-tab');
+                    
+                    // Update active tab
+                    tabs.forEach(t => t.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    // Update active content
+                    tabContents.forEach(content => {
+                        if (content.id === tabId) {
+                            content.classList.add('active');
+                        } else {
+                            content.classList.remove('active');
+                        }
+                    });
+                    
+                    // Track navigation event
+                    trackEvent({
+                        userId: document.getElementById('user-id').value,
+                        eventType: 'navigation-change',
+                        path: `/tab/${tabId}`
+                    });
+                });
+            });
+            
+            // Track form field focus
+            document.querySelectorAll('input, select, textarea').forEach(field => {
+                field.addEventListener('focus', function() {
+                    this.dataset.focusStart = Date.now().toString();
+                    
+                    trackEvent({
+                        userId: document.getElementById('user-id').value,
+                        eventType: 'form-field-focus',
+                        elementId: this.id,
+                        formId: this.form?.id || null,
+                        path: window.location.pathname
+                    });
+                });
+                
+                field.addEventListener('blur', function() {
+                    const focusStart = parseInt(this.dataset.focusStart || '0');
+                    const durationMs = focusStart ? Date.now() - focusStart : null;
+                    
+                    trackEvent({
+                        userId: document.getElementById('user-id').value,
+                        eventType: 'form-field-blur',
+                        elementId: this.id,
+                        formId: this.form?.id || null,
+                        value: this.value ? (this.value.length > 20 ? 'long-text' : 'has-value') : 'empty',
+                        durationMs,
+                        path: window.location.pathname
+                    });
+                });
+            });
+            
+            // Track form submission
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                trackEvent({
+                    userId: document.getElementById('user-id').value,
+                    eventType: 'form-submit',
+                    formId: this.id,
+                    path: window.location.pathname
+                });
+                
+                alert('Form submitted! Behavioral data captured.');
+            });
+            
+            // Clear events
+            document.getElementById('clear-events').addEventListener('click', function() {
+                fetch(API_URL, {
+                    method: 'DELETE'
+                })
+                .then(response => response.json())
+                .then(data => {
+                    capturedEvents = [];
+                    eventsLog.textContent = '';
+                    alert('Events cleared successfully!');
+                })
+                .catch(error => {
+                    console.error('Error clearing events:', error);
+                    alert('Failed to clear events');
+                });
+            });
+            
+            // Get insights
+            document.getElementById('get-insights').addEventListener('click', function() {
+                const analyticsUserId = document.getElementById('analytics-user-id').value || userId;
+                
+                fetch(`${API_URL}/insights?userId=${analyticsUserId}`)
+                .then(response => response.json())
+                .then(data => {
+                    const insightsData = document.getElementById('insights-data');
+                    insightsData.textContent = JSON.stringify(data, null, 2);
+                    
+                    // Update risk assessment
+                    const riskAssessment = document.getElementById('risk-assessment');
+                    
+                    if (data.error) {
+                        riskAssessment.innerHTML = `<p>Error: ${data.error}</p>`;
+                        return;
+                    }
+                    
+                    const riskScore = data.riskAssessment.score;
+                    let riskLevel = 'Low';
+                    let riskColor = '#10b981';
+                    
+                    if (riskScore > 0.7) {
+                        riskLevel = 'High';
+                        riskColor = '#ef4444';
+                    } else if (riskScore > 0.3) {
+                        riskLevel = 'Medium';
+                        riskColor = '#f59e0b';
+                    }
+                    
+                    let riskHtml = `
+                        <h3>Risk Level: <span style="color: ${riskColor}">${riskLevel}</span></h3>
+                        <p>Risk Score: ${(riskScore * 100).toFixed(1)}%</p>
+                        <p>Confidence: ${(data.riskAssessment.confidence * 100).toFixed(1)}%</p>
+                    `;
+                    
+                    if (data.riskAssessment.flags.length > 0) {
+                        riskHtml += '<h4>Detected Risk Factors:</h4><ul>';
+                        data.riskAssessment.flags.forEach(flag => {
+                            riskHtml += `<li>${flag}</li>`;
+                        });
+                        riskHtml += '</ul>';
+                    } else {
+                        riskHtml += '<p>No risk factors detected</p>';
+                    }
+                    
+                    riskAssessment.innerHTML = riskHtml;
+                })
+                .catch(error => {
+                    console.error('Error getting insights:', error);
+                    document.getElementById('insights-data').textContent = 'Error fetching insights';
+                    document.getElementById('risk-assessment').innerHTML = '<p>Error: Could not generate risk assessment</p>';
+                });
+            });
+            
+            // Function to track events
+            function trackEvent(eventData) {
+                fetch(API_URL, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(eventData)
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        capturedEvents.push({
+                            ...eventData,
+                            id: data.eventId,
+                            timestamp: new Date().toLocaleTimeString()
+                        });
+                        
+                        // Update events log
+                        const event = capturedEvents[capturedEvents.length - 1];
+                        eventsLog.textContent = capturedEvents.map(e => 
+                            `[${e.timestamp}] ${e.eventType}: ${e.elementId || e.formId || e.path || 'N/A'}`
+                        ).join('\n');
+                        
+                        // Auto-scroll to bottom
+                        eventsLog.scrollTop = eventsLog.scrollHeight;
+                    }
+                })
+                .catch(error => {
+                    console.error('Error tracking event:', error);
+                });
+            }
+            
+            // Set initial analytics user ID
+            document.getElementById('analytics-user-id').value = userId;
+            
+            // Track page load event
+            trackEvent({
+                userId,
+                eventType: 'page-load',
+                path: window.location.pathname
+            });
+        });
+    </script>
+</body>
+</html>
