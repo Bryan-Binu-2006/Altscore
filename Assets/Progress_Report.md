@@ -160,4 +160,4 @@
 
 ---
 
-*For visuals, see: System Overview, Architecture, Scoring Flow, ER Diagram, Test Plan, Deployment Checklist (to be added).*
+
